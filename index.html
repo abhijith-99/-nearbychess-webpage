@@ -10,8 +10,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<link rel="stylesheet" href="assets/css/slider.css">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="script.js"></script>
+		<script src="assets/js/script.js"></script>
 		<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 
 	</head>
@@ -29,8 +31,6 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
-							<!-- <span class="icon fa-gem"></span> -->
-
 							<img src="images\logo1.png" alt="Logo" style="max-width:80px; max-height:80px;" class="main-icon">
 						</div>
 						<div class="content">
@@ -42,10 +42,8 @@
 						<nav>
 							<ul>
 								<li><a href="#intro">Intro</a></li>
-								<!-- <li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li> -->
 								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
+								
 							</ul>
 						</nav>
 					</header>
@@ -56,11 +54,22 @@
 						<!-- Intro -->
 							<article id="intro">
 								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+							
+								<div class="slider">
+								
+								<div class="slide image main"><img src="images/chessboardweb.png" alt="" /></div>
+								<div class="slide image main"><img src="images/userhomeandroid.jpg" alt="" /></div>
+								<div class="slide image main"><img src="images/profilepage.jpg" alt="" /></div>
+								<div class="slide image main"><img src="images/auth.png" alt="" /></div>
+								<div class="slide image main"><img src="images/chessboardandroid.jpg" alt="" /></div>								
+							</div>
 
-								<!-- <span class="image main"><img src="images/strategy-chess-concept-with-chess-figures-checkerboard-top-view.jpg" alt="" /></span> -->
+								<a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+								<a class="next" onclick="moveSlide(1)">&#10095;</a>
+
+								
 								<p>Nearbychess revolutionizes the way chess enthusiasts connect and compete. Bridging the gap between traditional chess and modern technology, our app introduces a groundbreaking feature that locates and matches you with nearby players, fostering local competition and camaraderie. It's not just about playing chess; it's about building a community of like-minded individuals passionate about strategy and skill.</p>
-								<p>With an intuitive interface, Nearbychess makes finding and challenging local opponents effortless, elevating your chess experience to a whole new level. Whether you're a novice looking to learn or a seasoned player aiming to dominate, Nearbychess offers a dynamic platform where every move counts and every game brings you closer to your next great opponent. Join Nearbychess and discover the most engaging way to play chess, meet new friends, and share your love for the game within your community.</p>
+								<!-- <p>With an intuitive interface, Nearbychess makes finding and challenging local opponents effortless, elevating your chess experience to a whole new level. Whether you're a novice looking to learn or a seasoned player aiming to dominate.</p> -->
 							</article>
 
 						<!-- Contact -->
@@ -88,6 +97,17 @@
 								</form>
 							</article>
 
+								<!-- Popup message container, hidden by default -->
+								<div id="popupMessage" style="display: none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 100; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); flex-direction: column; align-items: center;">
+									<p id="popupText" style="color: black;">Please check the fields.</p>
+									<button onclick="closePopup()" style="background-color: red;">OK</button>
+								</div>
+
+
+
+						
+
+
 
 				
 
@@ -98,6 +118,9 @@
 									<p style="color: black;">Thank you for your message!</p>
 								</div>
 							</div>
+							
+
+
 							
   
 
@@ -346,47 +369,36 @@
 							</article>					
 
 					</div>
-					<div class="linksforapp">Get it on
-
-					<!-- <div class="play-app-store-buttons">
-						<a href="https://play.google.com/store/apps/details?id=your.app.id" class="button" target="_blank">Play Store</a>
-						<a href="https://nearbychess.au-ki.com/" class="button" target="_blank">web</a>
-						<a href="https://apps.apple.com/app/idyourAppId" class="button" target="_blank">App Store</a>
-					</div> -->
-
-
-
+					<div class="linksforapp">
+						Get it on
 					<div class="play-app-store-buttons">
-						<!-- Play Store Image -->
-						<a href="https://play.google.com/store/apps/details?id=your.app.id"  class="button-get" target="_blank" style="text-decoration: none;">
-							<img src="images/get.svg" alt="Play Store"/>
-						</a>
-						<!-- Web Image -->
-						<a href="https://nearbychess.au-ki.com/" class="button-get" target="_blank">
-							<!-- <img src="images/get.svg" alt="Web" /> -->
-
 						
+					
 
 
-
-
-
-							  <svg width="100" height="60" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-								<!-- Globe icon -->
-								<circle cx="50" cy="20" r="15" stroke="white" stroke-width="2" fill="none" />
-								<line x1="35" y1="20" x2="65" y2="20" stroke="white" stroke-width="1.5"/>
-								<ellipse cx="50" cy="20" rx="14" ry="7" stroke="white" stroke-width="1.5" fill="none"/>
-								<ellipse cx="50" cy="20" rx="7" ry="14" stroke="white" stroke-width="1.5" fill="none"/>
-								<!-- Text -->
-								<text x="50" y="50" font-family="Arial" font-size="10" fill="white" text-anchor="middle" style="font-size: 15px;">Play on Web</text>
-							  </svg>
-							  
-							  
-
+						<!-- Play Store Image -->
+						<a href="https://play.google.com/store/apps/details?id=your.app.id"  class="button-get" target="_blank">
+							<!-- <img src="images/get.svg" alt="Play Store"/> -->
+							<img src="images/playstore.png" alt="">
 						</a>
+
+					
+
+
+						  <svg width="100" height="55" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+							<!-- Globe icon -->
+							<circle cx="50" cy="20" r="15" stroke="white" stroke-width="2" fill="none" />
+							<line x1="35" y1="20" x2="65" y2="20" stroke="white" stroke-width="1.5"/>
+							<ellipse cx="50" cy="20" rx="14" ry="7" stroke="white" stroke-width="1.5" fill="none"/>
+							<ellipse cx="50" cy="20" rx="7" ry="14" stroke="white" stroke-width="1.5" fill="none"/>
+							<!-- Text -->
+							<text x="50" y="50" font-family="Arial" font-size="10" fill="white" text-anchor="middle" style="font-size: 15px;">Play on Web</text>
+						  </svg>
+
 						<!-- App Store Image -->
 						<a href="https://apps.apple.com/app/idyourAppId" class="button-get" id="appstore-icon"target="_blank" >
-							<img src="images/download-on-the-app-store-apple-logo-svgrepo-com.svg" alt="App Store"/>
+							<!-- <img src="images/download-on-the-app-store-apple-logo-svgrepo-com.svg" alt="App Store"/> -->
+							<img src="images/app-store.svg" alt="">
 						</a>
 					</div>
 					
@@ -408,6 +420,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/slider.js"></script>
 
 
 			<script type="text/javascript">

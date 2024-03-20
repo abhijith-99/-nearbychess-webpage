@@ -186,20 +186,19 @@ input, select, textarea {
 		font-size: 1rem;
 		line-height: 1.65;
 	}
-
-	a {
+ a {
 		-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
+		/* border-bottom: dotted 1px rgba(255, 255, 255, 0.5); */
 		text-decoration: none;
 		color: inherit;
-	}
+	} 
 
 		a:hover {
 			border-bottom-color: transparent;
-		}
+		} 
 
 	strong, b {
 		color: #ffffff;
@@ -1248,6 +1247,7 @@ input, select, textarea {
 		width: 100%;
 		padding: 4rem 2rem;
 		z-index: 3;
+
 	}
 
 		#wrapper:before {
@@ -1646,7 +1646,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#main article {
-				padding: 3.5rem 2rem 0.5rem 2rem ;
+				padding: 0.5rem 1rem 0.5rem 2rem ;
 			}
 
 				#main article .close:before {
@@ -1752,51 +1752,33 @@ input, select, textarea {
 	.linksforapp{
 		text-align: center;
 		font-family: "Courier New", monospace;
-		padding-top: 4rem;
+		padding-top: 2rem;
 	}
 
 	
 
 	.play-app-store-buttons {
-
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
 		text-align: center; /* Centers the buttons container */
-		margin: 20px 0; /* Adds some space around the buttons */
+		/* margin: 20px 0;  */
 		width: 100%;
-
 		opacity: 0; /* Start out invisible */
 		animation: fadeIn 1.5s ease-out forwards; /* Apply the animation */
 		animation-delay: 0.5s;
-		
+		font-family: 'Courier New', Courier, monospace;
 	}
-
-
-		/* .play-app-store-buttons a.button {
-
-	
-			margin: 5px;
-			text-decoration: none;
-		}
-		.button-get{
-			margin: 1rem;
-			padding: 0 1.25rem 0 1.35rem;
-		}
-	
-		.play-app-store-buttons a.button:hover {
-			background-color: #647f9b;
-		} */
 
 
 
 		.play-app-store-buttons a.button-get {
 			display: inline-flex; /* Ensures the links are lined up inline */
-			align-items: center;
+			/* align-items: center; */
 			margin: 1rem; /* Adjust as needed to match your design */
-			padding: 0.5rem; /* Provides some padding around the SVG */
+			/* padding: 0.5rem; */
 			box-sizing: border-box; /* Ensures padding is included in width calculation */
-			width: calc(13.33% - 4rem); /* Example to match width with Intro/Contact, adjust the subtraction value based on your margin */
+			width: calc(18.33% - 4rem); /* Example to match width with Intro/Contact, adjust the subtraction value based on your margin */
 			text-align: center; /* Center the SVG image */
 			text-decoration: none;
 		}
@@ -1819,12 +1801,10 @@ input, select, textarea {
 				align-items: center;
 			}
 			.play-app-store-buttons a.button-get{
-				width: calc(62.1% - 4rem);
-				margin: 1px;
+				width: calc(45.1% - 4rem);
+				margin: 5px;
 			}
-			#appstore-icon{
-				margin-top: -3rem;
-			}
+	
 			/* .linksforapp{
 				padding-top: 4rem;
 			} */
@@ -1851,7 +1831,7 @@ input, select, textarea {
 
 		#footer .copyright {
 			letter-spacing: 0.2rem;
-			font-size: 0.6rem;
+			font-size: 0.8rem;
 			opacity: 0.75;
 			margin-bottom: 0;
 			text-transform: uppercase;
@@ -1871,4 +1851,29 @@ input, select, textarea {
 
 		body.is-preload #footer {
 			opacity: 0;
+		}
+
+		@media (width: 2560px) {
+			#wrapper{
+				justify-content: center;
+			}
+			.inner{
+				padding: 6rem 2rem !important;
+			}
+			.inner h1{
+				font-size: 3.5rem;
+			}
+			.inner p{
+				font-size: 1.2rem !important;
+			}
+			.play-app-store-buttons a.button-get{
+				width: calc(32.33% - 4rem);
+			}
+			#footer .copyright{
+				font-size: 1.3rem;
+			}
+			/* #main article{
+				width: 47rem;
+			} */
+			
 		}
